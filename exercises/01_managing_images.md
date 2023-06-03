@@ -44,7 +44,7 @@ Delete the Images
 Now delete each of the two images. To delete Jenkins use this command:
 
 ```
-docker rmi jenkins/jenkins
+docker rmi jenkins/jenkins:lts
 ```
 
 Note there’s no tag because we have the “latest” tag of Jenkins.
