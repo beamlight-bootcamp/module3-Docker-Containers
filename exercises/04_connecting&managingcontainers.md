@@ -6,7 +6,7 @@ The goal of this exercise is to practice the two common ways of entering a conta
 
 Instructions:
 
-Enter a Container at Runtime
+# Enter a Container at Runtime
 
 Launch a container based on the "redis" image and start an interactive shell. 
 Name the container "enter_redis" and run the container in the foreground.
