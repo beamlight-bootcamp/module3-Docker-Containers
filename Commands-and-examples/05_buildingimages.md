@@ -147,3 +147,29 @@ Explanation of each line in the Dockerfile above:
    - It specifies that when the container starts, the default command to be executed is `ping www.docker.com`.
    - The `CMD` instruction can be overridden by providing a new command when running the container.
 
+# Docker build 
+
+The `docker build` command is used to build a Docker image from a Dockerfile. It takes the instructions specified in the Dockerfile and executes them in order to create a new image.
+
+Syntax of the `docker build` command:
+```
+docker build [OPTIONS] PATH
+```
+
+- `OPTIONS` are additional flags that can be passed to the `docker build` command to modify its behavior. Some commonly used options include:
+  - `-t, --tag`: Assigns a name and optional tag to the image being built. For example, `-t myimage:latest` tags the image as `myimage` with the `latest` tag.
+  - `--build-arg`: Sets build-time variables that can be accessed from the Dockerfile. For example, `--build-arg VERSION=2.1` sets the build-time variable `VERSION` to `2.1`.
+  - `-f, --file`: Specifies the path to the Dockerfile if it is not in the default location (./Dockerfile).
+  - `-q, --quiet`: Suppresses the build output and only displays the final image ID.
+  - `-no-cache`: Forces the build to be performed without using cached intermediate layers.
+
+- `PATH` is the path to the build context, which is the root directory containing the Dockerfile and any files referenced in it. The build context is recursively sent to the Docker daemon during the build process.
+
+Example usage of the `docker build` command:
+```
+docker build -t myimage:latest .
+```
+In this example, the Dockerfile in the current directory (`.`) is used to build an image with the tag `myimage:latest`.
+
+
+
