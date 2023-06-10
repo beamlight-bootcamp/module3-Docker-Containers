@@ -60,13 +60,15 @@ docker images
 * Start a Container Using the Image
 
 * Test that your image starts bash and contains the nano package as expected.
+```
 docker run --name nanotest -it YOUR_DOCKER_ID/nanotest
+```
 
 * You should be presented with a bash prompt. Now, see if nano is available.
 which nano
 
 * If nano is available, the above command will report the path to the nano executable: "/bin/nano"
-http://www.LinuxTrainingAcademy.com
+
 
 * Exit out of the container.
 ```
