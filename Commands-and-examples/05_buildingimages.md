@@ -95,5 +95,25 @@ Here's a brief explanation of what a Dockerfile is and why it is used:
 
 In summary, a Dockerfile is a text-based configuration file used to automate the process of creating Docker images. It provides a declarative and reproducible way to define the environment and dependencies of an application, enabling easy packaging and deployment of containerized applications. Dockerfiles are a key component of the Docker ecosystem and facilitate efficient and consistent containerization practices.
 
+# Dockerfile Instructions
 
+Certainly! Here are some common instructions in a Dockerfile along with their explanations:
+
+1. `FROM`: Specifies the base image to build upon. It is typically the first instruction in a Dockerfile. For example, `FROM python:3.8` sets the base image as the official Python 3.8 image.
+
+2. `RUN`: Executes a command inside the container during the build process. It is used to install packages, run build scripts, or perform any other necessary setup steps. For example, `RUN apt-get update && apt-get install -y curl` updates the package repositories and installs curl.
+
+3. `COPY` and `ADD`: Copies files from the host machine to the container's filesystem. `COPY` is used for copying local files or directories, while `ADD` allows additional features such as URL retrieval and automatic extraction of compressed files. For example, `COPY app.py /app/` copies the `app.py` file from the host to the `/app/` directory in the container.
+
+4. `WORKDIR`: Sets the working directory for subsequent instructions in the Dockerfile. It is used to provide a relative path for other instructions like `RUN`, `COPY`, and `CMD`. For example, `WORKDIR /app` sets the working directory as `/app`.
+
+5. `EXPOSE`: Informs Docker that the container listens on specified network ports at runtime. It does not actually publish the ports. It serves as documentation for the intended network ports to be exposed. For example, `EXPOSE 8080` indicates that the container listens on port 8080.
+
+6. `CMD`: Specifies the default command to run when the container starts. It provides the main purpose of the container and can include command-line arguments. If the `CMD` is overridden at runtime, the provided command will be executed instead. For example, `CMD ["python", "app.py"]` sets the default command as `python app.py`.
+
+7. `ENTRYPOINT`: Similar to `CMD`, it specifies the command to run when the container starts. However, unlike `CMD`, the `ENTRYPOINT` command is not overridden by the command provided at runtime. It becomes the entry point or "entry function" of the container. For example, `ENTRYPOINT ["python", "app.py"]` sets the entry point as `python app.py`.
+
+8. `ENV`: Sets environment variables inside the container. It is used to provide configuration options or runtime parameters to the application. For example, `ENV API_KEY=123456` sets an environment variable `API_KEY` with the value `123456`.
+
+These are just a few commonly used instructions in a Dockerfile. There are additional instructions available, such as `LABEL`, `USER`, `VOLUME`, and `ARG`, which provide more advanced functionality for building Docker images. The choice and usage of instructions depend on the specific requirements and configuration of your containerized application.
 
