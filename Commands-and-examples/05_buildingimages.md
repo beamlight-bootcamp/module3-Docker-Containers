@@ -171,5 +171,62 @@ docker build -t myimage:latest .
 ```
 In this example, the Dockerfile in the current directory (`.`) is used to build an image with the tag `myimage:latest`.
 
+Now let's build the dockefile we have seen above
+
+Sample Output
+
+```
+Mohammads-MacBook-Air:~ mohammadashadali$ pwd
+/Users/mohammadashadali
+Mohammads-MacBook-Air:~ mohammadashadali$ cd Desktop
+Mohammads-MacBook-Air:Desktop mohammadashadali$ mkdir DockerPing
+Mohammads-MacBook-Air:Desktop mohammadashadali$ cd DockerPing
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ vi Dockerfile
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ cat Dockerfile
+FROM debian:latest
+
+LABEL maintainer="Mohammad Ali"
+
+ENTRYPOINT ["bin/ping"]
+
+CMD ["www.docker.com"]
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ docker build -t ashadali/dockerping:latest .
+Sending build context to Docker daemon  2.048kB
+Step 1/4 : FROM debian:latest
+latest: Pulling from library/debian
+bd73737482dd: Already exists 
+Digest: sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
+Status: Downloaded newer image for debian:latest
+ ---> 1ac99357ef21
+Step 2/4 : LABEL maintainer="Mohammad Ali"
+ ---> Running in 225cc0bf9328
+Removing intermediate container 225cc0bf9328
+ ---> 1c428b5b8790
+Step 3/4 : ENTRYPOINT ["bin/ping"]
+ ---> Running in 7709a2682537
+Removing intermediate container 7709a2682537
+ ---> 6a8b4ff53137
+Step 4/4 : CMD ["www.docker.com"]
+ ---> Running in e57d8cffe7b2
+Removing intermediate container e57d8cffe7b2
+ ---> 1c377158ffb0
+Successfully built 1c377158ffb0
+Successfully tagged ashadali/dockerping:latest
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED              SIZE
+ashadali/dockerping   latest              1c377158ffb0        About a minute ago   124MB
+debian                latest              1ac99357ef21        2 weeks ago          124MB
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: ashadali
+Password: 
+Login Succeeded
+Mohammads-MacBook-Air:DockerPing mohammadashadali$ docker push ashadali/dockerping:latest
+The push refers to repository [docker.io/ashadali/dockerping]
+974e52a24adf: Mounted from library/debian 
+latest: digest: sha256:71c3624a347ab1d197f686f36f7a7f9dc2218bc4a9de2f725f053849c00437f9 size: 529
+```
+
+
 
 
