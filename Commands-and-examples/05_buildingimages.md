@@ -137,7 +137,7 @@ Explanation of each line in the Dockerfile above:
    - This line adds a label to the Docker image with the key "maintainer" and the value "Mohammad Ali".
    - It provides information about the person responsible for maintaining the image.
 
-3. `ENTRYPOINT ["bin/ping"]`
+3. `ENTRYPOINT ["/bin/ping"]`
    - This line sets the entry point of the container as the command `ping` located in the `/bin` directory.
    - It specifies the default command to be executed when the container starts.
    - Any additional command-line arguments provided when running the container will be appended to the `ENTRYPOINT` command.
