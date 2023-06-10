@@ -115,3 +115,35 @@ In summary, a Dockerfile is a text-based configuration file used to automate the
 
 9. LABEL: Adds metadata to an image by specifying key-value pairs. Labels provide information about the image, such as version, maintainer, description, or any other custom details. Multiple LABEL instructions can be used to define multiple metadata labels.
 
+# Sample Dockerfile
+
+```
+FROM debian:latest
+
+LABEL maintainer="Mohammad Ali"
+
+ENTRYPOINT ["bin/ping"]
+
+CMD ["www.docker.com"]
+```
+
+Explanation of each line in the Dockerfile above:
+
+1. `FROM debian:latest`
+   - This line sets the base image for the Docker image as `debian` with the `latest` tag.
+   - It means that the new image will be built on top of the official Debian Linux distribution image.
+
+2. `LABEL maintainer="Mohammad Ali"`
+   - This line adds a label to the Docker image with the key "maintainer" and the value "Mohammad Ali".
+   - It provides information about the person responsible for maintaining the image.
+
+3. `ENTRYPOINT ["bin/ping"]`
+   - This line sets the entry point of the container as the command `ping` located in the `/bin` directory.
+   - It specifies the default command to be executed when the container starts.
+   - Any additional command-line arguments provided when running the container will be appended to the `ENTRYPOINT` command.
+
+4. `CMD ["www.docker.com"]`
+   - This line sets the default command arguments for the container.
+   - It specifies that when the container starts, the default command to be executed is `ping www.docker.com`.
+   - The `CMD` instruction can be overridden by providing a new command when running the container.
+
