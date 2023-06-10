@@ -122,7 +122,7 @@ FROM debian:latest
 
 LABEL maintainer="Mohammad Ali"
 
-ENTRYPOINT ["bin/ping"]
+ENTRYPOINT ["/bin/ping"]
 
 CMD ["www.docker.com"]
 ```
@@ -187,7 +187,7 @@ FROM debian:latest
 
 LABEL maintainer="Mohammad Ali"
 
-ENTRYPOINT ["bin/ping"]
+ENTRYPOINT ["/bin/ping"]
 
 CMD ["www.docker.com"]
 Mohammads-MacBook-Air:DockerPing mohammadashadali$ docker build -t ashadali/dockerping:latest .
