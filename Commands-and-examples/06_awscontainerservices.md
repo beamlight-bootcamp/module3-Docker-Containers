@@ -99,7 +99,6 @@ When to Use Which Service:
    - You have sporadic or bursty workloads that require automatic scaling and resource allocation.
    - You are starting fresh with container deployments and don't require fine-grained control over the infrastructure.
 
-* Pros and Cons:
 AWS Elastic Container Service (ECS):
 - Pros: Greater control over infrastructure, advanced networking capabilities, flexibility in deployment options, and integration with AWS services.
 - Cons: Requires managing and scaling EC2 instances, potentially increased complexity, and limited serverless experience.
