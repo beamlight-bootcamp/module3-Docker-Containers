@@ -70,9 +70,6 @@ Key Features of AWS ECS:
 - Advanced Task Scheduling: ECS provides advanced task placement options, such as task placement constraints and task placement strategies, allowing you to fine-tune container placement.
 - Hybrid Capabilities: ECS supports hybrid architectures by allowing you to connect on-premises resources to ECS clusters using AWS Outposts.
 
-Ultimately, the choice between ECS and Fargate depends on your specific requirements,
-
-
 # AWS Fargate
 
 * AWS Fargate:
