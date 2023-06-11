@@ -58,8 +58,6 @@ These are just a few examples of popular container orchestration services. Each 
 
 # AWS Elastic Container Service (ECS)
 
-Comparison of AWS Elastic Container Service (ECS) and AWS Fargate:
-
 Architectural Comparison:
 * AWS Elastic Container Service (ECS):
    - ECS is a container orchestration service that allows you to deploy and manage containers on EC2 instances.
