@@ -58,7 +58,6 @@ These are just a few examples of popular container orchestration services. Each 
 
 # AWS Elastic Container Service (ECS)
 
-Architectural Comparison:
 * AWS Elastic Container Service (ECS):
    - ECS is a container orchestration service that allows you to deploy and manage containers on EC2 instances.
    - It requires you to provision and manage the underlying EC2 infrastructure where your containers run.
